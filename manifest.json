@@ -16,5 +16,5 @@
       "js": ["contents.js"]
     }
   ],
-  "permissions": ["scripting", "activeTab", "tabs", "webNavigation"]
+  "permissions": ["scripting", "activeTab", "tabs", "webNavigation", "storage"]
 }

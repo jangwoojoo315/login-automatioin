@@ -1,3 +1,12 @@
+document.getElementById("add").addEventListener("click", () => {
+  const addInfo = document.getElementById("add-info");
+  if (addInfo.style.display === "flex") {
+    addInfo.style.display = "none";
+  } else {
+    addInfo.style.display = "flex";
+  }
+});
+
 document.getElementById("vn").addEventListener("click", () => {
   const data = ["vn첫 번째 항목", "vn두 번째 항목", "vn세 번째 항목"];
 
