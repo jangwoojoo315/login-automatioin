@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "CleverDent 로그인 자동화",
+  "version": "1.0",
+  "description": "CleverDent 로그인 자동화",
+  "action": {
+    "default_icon": {
+      "96": "icons/favicon-96x96.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*",
+    "https://vatechcorp.sharepoint.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"]
+    }
+  ],
+
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "tabs",
+    "webNavigation",
+    "storage",
+    "windows",
+    "https://vatechcorp.sharepoint.com/",
+    "cookies"
+  ]
+}

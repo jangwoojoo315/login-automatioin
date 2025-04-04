@@ -1,5 +1,15 @@
 {
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
   "dependencies": {
-    "chrome-types": "^0.1.345"
+    "chrome-types": "^0.1.345",
+    "exceljs": "^4.4.0",
+    "path": "^0.12.7",
+    "vite": "^6.2.5"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.313"
   }
 }
