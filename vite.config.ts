@@ -6,15 +6,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        popup: resolve(__dirname, "public/popup.html"),
+        popup: resolve(__dirname, "popup.html"), // public 말고 루트에 위치
+        background: resolve(__dirname, "src/background.js"),
+        styles: resolve(__dirname, "styles.css"),
       },
       output: {
-        entryFileNames: (chunk) => {
-          if (chunk.name === "background") {
-            return "background.js";
-          }
-          return "[name].js";
-        },
+        inlineDynamicImports: false,
+        entryFileNames: "[name].js", // 이름 고정!
+        assetFileNames: "[name].[ext]", // 이미지나 기타 파일 이름도 고정
       },
     },
     outDir: "dist",

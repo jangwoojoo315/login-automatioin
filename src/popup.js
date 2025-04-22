@@ -8,7 +8,6 @@ document.getElementById("excel").addEventListener("click", () => {
 
 // 계정 추가 기능
 document.getElementById("add").addEventListener("click", () => {
-  console.log("asdf");
   const addInfo = document.getElementById("add-info");
   const allListWrapper = document.getElementById("all-list-wrapper");
   if (addInfo.style.display === "flex") {
