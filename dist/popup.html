@@ -15,8 +15,10 @@
         <span class="slider"></span>
       </label>
     </div>
-    <button id="add">계정 추가</button>
-    <button id="excel">엑셀 다운로드</button>
+    <div id="add-sync-wrapper">
+      <button id="scync">동기화</button>
+      <button id="add">계정 추가</button>
+    </div>
     <div id="add-info">
       <div>
         <input type="radio" id="add-vnqa" checked name="option" />
@@ -56,9 +58,18 @@
     </div>
     <div id="all-list-wrapper">
       <div>
-        <button id="vn" class="domain-btn">베트남 QA</button>
-        <button id="eg" class="domain-btn">이집트 QA</button>
-        <button id="in" class="domain-btn">인도 QA</button>
+        <button id="qa_vietnam" class="domain-btn">베트남 QA</button>
+        <button id="qa_egypt" class="domain-btn">이집트 QA</button>
+        <button id="qa_india" class="domain-btn">인도 QA</button>
+      </div>
+      <div>
+        <button id="prod_vietnam" class="domain-btn">베트남 운영</button>
+        <button id="prod_egypt" class="domain-btn">이집트 운영</button>
+        <button id="prod_india" class="domain-btn">인도 운영</button>
+      </div>
+      <div>
+        <button id="dev" class="domain-btn">Dev</button>
+        <button id="dev2" class="domain-btn">Dev2</button>
       </div>
 
       <div id="list"></div>

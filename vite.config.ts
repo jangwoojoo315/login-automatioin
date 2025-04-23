@@ -5,6 +5,7 @@ export default defineConfig({
   base: "./",
   build: {
     rollupOptions: {
+      treeshake: false,
       input: {
         popup: resolve(__dirname, "popup.html"), // public 말고 루트에 위치
         background: resolve(__dirname, "src/background.js"),

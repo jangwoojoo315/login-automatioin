@@ -1,9 +1,10 @@
 import { fetchLoginInfo } from "./excel/loginInfoList.js";
 
 // 로그인 정보 가져오기
-document.getElementById("excel").addEventListener("click", () => {
-  console.log("colcik");
+document.getElementById("scync").addEventListener("click", () => {
   fetchLoginInfo();
+  const list = document.getElementById("list");
+  list.innerHTML = "";
 });
 
 // 계정 추가 기능
@@ -146,12 +147,22 @@ function deleteAccount(accountList, region, index) {
 }
 function getDomain(region) {
   switch (region) {
-    case "vn":
+    case "dev":
+      return "dev.vnclever.com";
+    case "dev2":
+      return "dev2.vnclever.com";
+    case "qa_vietnam":
       return "vnm2.vnclever.com";
-    case "eg":
+    case "qa_egypt":
       return "egy2.vnclever.com";
-    case "in":
+    case "qa_india":
       return "ind2.vnclever.com";
+    case "prod_vietnam":
+      return "vnm.dentalclever.com";
+    case "prod_egypt":
+      return "egy.dentalclever.com";
+    case "prod_india":
+      return "ind.dentalclever.com";
   }
 }
 
@@ -217,19 +228,22 @@ async function initAccountList(region) {
 
   return result;
 }
-document.getElementById("vn").addEventListener("click", async () => {
-  const region = "vn";
-  const result = await initAccountList("vn");
 
-  getAccount(result, region);
-});
-document.getElementById("eg").addEventListener("click", async () => {
-  const region = "eg";
-  const result = await initAccountList("eg");
-  getAccount(result, region);
-});
-document.getElementById("in").addEventListener("click", async () => {
-  const region = "in";
-  const result = await initAccountList("in");
-  getAccount(result, region);
+const regionList = [
+  "dev",
+  "dev2",
+  "qa_vietnam",
+  "qa_egypt",
+  "qa_india",
+  "prod_vietnam",
+  "prod_egypt",
+  "prod_india",
+];
+
+regionList.forEach((region) => {
+  document.getElementById(region).addEventListener("click", async () => {
+    const result = await initAccountList(region);
+
+    getAccount(result, region);
+  });
 });

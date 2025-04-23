@@ -109,6 +109,13 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
+/*계정 추가 및 동기화 버튼 관련 css*/
+#add-sync-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 /*계정 추가 관련 css*/
 #add {
   display: block;
@@ -160,6 +167,8 @@ input:checked + .slider:before {
   background-color: transparent;
   cursor: pointer;
   border-radius: 0px;
+  width: 120px;
+  height: 38px;
 }
 .account-wrapper {
   display: flex;
